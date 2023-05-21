@@ -1,0 +1,27 @@
+name: Meme On Commit
+
+on:
+  push:
+    branches:
+      - main  
+
+jobs:
+  meme-on-commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Generate Meme
+        run: |
+          echo "This is a meme" > https://www.bing.com/images/search?view=detailV2&ccid=%2b3SfnOlf&id=42999ACA07ABE751EB04AB7BB3C18B7F266F910C&thid=OIP.-3SfnOlfiUIP_sc5srXg2QHaFj&mediaurl=https%3a%2f%2fwww.icoastalnet.com%2fblog%2fwp-content%2fuploads%2f2019%2f09%2fvisited-website-1.jpg&exph=750&expw=1000&q=meme+website+with+a+meme&simid=607991443463995706&FORM=IRPRST&ck=FE4FACBCF9D05B42550BC72060BEBD09&selectedIndex=2
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name 'Meme Bot'
+          git config --global user.email 'memebot@example.com'
+          git add meme.txt
+          git commit -m "Add meme on commit" || true
+          git push
+   
