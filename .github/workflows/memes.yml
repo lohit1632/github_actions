@@ -19,8 +19,8 @@ jobs:
 
       - name: Add and Commit Meme
         run: |
-          git config --global user.name 'Meme Bot'
-          git config --global user.email 'memebot@example.com'
+          git config --global user.name 'lohit1632'
+          git config --global user.email 'jack.ryan.cia0073@gmail.com'
           git add false.jpeg
           git commit -m "Add meme on commit" || true
           git push
